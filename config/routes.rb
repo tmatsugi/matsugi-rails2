@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     # heloというURLがきたらhelo#indexをしてください　helo#index -> heloコントローラーのindexメソッドを行う
     get 'helo', to: 'helo#index'
     
+    get 'helo/other'
     
 end

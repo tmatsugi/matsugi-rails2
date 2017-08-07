@@ -4,8 +4,15 @@ class HeloController < ApplicationController # ApplicationControllerを継承し
     # 何も書かなかった場合はデフォルトに順ずる
     def index
         # render index.html.erbを書かなくても移動する
-        @title = "Viewサンプル"
-        @msg = "コントローラーで用意した値です"
+        if params['msg'] != nil then
+            @title = params['msg']
+        else
+            @title = 'index'
+        end
+        @msg = 'this is redirect sample'
     end
-
+    
+    def other
+        redirect_to action: :index, params: {'msg': 'from other page'}
+    end
 end
