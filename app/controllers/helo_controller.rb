@@ -2,7 +2,7 @@ class HeloController < ApplicationController # ApplicationControllerを継承し
     # defはメソッド宣言
     # htt://ドメイン/○○/aaa -> ○○のaaaを実行
     # 何も書かなかった場合はデフォルトに順ずる
-    protect_from_forgery
+    # protect_from_forgery
     
     def index
         # render index.html.erbを書かなくても移動する
