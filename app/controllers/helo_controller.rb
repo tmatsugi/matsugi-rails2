@@ -2,14 +2,19 @@ class HeloController < ApplicationController # ApplicationControllerを継承し
     # defはメソッド宣言
     # htt://ドメイン/○○/aaa -> ○○のaaaを実行
     # 何も書かなかった場合はデフォルトに順ずる
+    protect_from_forgery
+    
     def index
         # render index.html.erbを書かなくても移動する
-        if params['msg'] != nil then
-            @title = params['msg']
+        if request.post? then
+            @title = 'Result'
+            @msg = 'you typed: ' + params['input1']
+            @value = params['input1']
         else
             @title = 'index'
+            @msg = 'type test ...'
+            @value = ' ' 
         end
-        @msg = 'this is redirect sample'
     end
     
     def other

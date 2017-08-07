@@ -7,4 +7,6 @@ Rails.application.routes.draw do
     
     get 'helo/other'
     
+    post 'helo', to: 'helo#index'
+    post 'helo/index'
 end
