@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'dengonban/index'
+
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
     # get 'コントローラー/アクション'
     get 'helo/index'
@@ -9,4 +11,9 @@ Rails.application.routes.draw do
     
     post 'helo', to: 'helo#index'
     post 'helo/index'
+    
+    get 'dengonban', to: 'dengonban#index'
+    post 'dengonban', to: 'dengonban#index'
+    get 'dengonban/index'
+    post 'dengonban/index'
 end
