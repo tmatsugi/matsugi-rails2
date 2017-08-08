@@ -8,8 +8,8 @@ class HeloController < ApplicationController # ApplicationControllerを継承し
         # render index.html.erbを書かなくても移動する
         if request.post? then
             @title = 'Result'
-            if params['r1'] then
-                @msg = 'you selected:' + params['r1']
+            if params['s1'] then
+                @msg = 'you selected:' + params['s1']
             else
                 @msg = 'not selected...'
             end
