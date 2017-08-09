@@ -14,15 +14,24 @@ Rails.application.routes.draw do
     post 'helo', to: 'helo#index'
     post 'helo/index'
     
+    # 伝言板
     get 'dengonban', to: 'dengonban#index'
     post 'dengonban', to: 'dengonban#index'
     get 'dengonban/index'
     post 'dengonban/index'
     
+    # Select
     get 'people', to: 'people#index'
     post 'people', to: 'people#index'
     get 'people/index'
     post 'people/index'
     
+        # addメソット
+    get 'people/add'
+    post 'people/add', to:'people#create'
+    
+    
+    # ID検索
     get 'people/:id', to:'people#show'
+    
 end
