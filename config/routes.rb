@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  get 'people/index'
+    get 'cards/index'
 
-  get 'dengonban/index'
+    get 'cards/show'
+
+    get 'cards/add'
+
+    get 'cards/edit'
 
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
     # get 'コントローラー/アクション'
@@ -36,7 +40,6 @@ Rails.application.routes.draw do
     
     # ID検索
     get 'people/:id', to:'people#show'
-    
     get 'people/delete/:id', to: 'people#delete'
     
 end
