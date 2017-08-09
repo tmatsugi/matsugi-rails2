@@ -465,9 +465,11 @@ end
 		<title>伝言板</title>
 		<%= csrf_meta_tags %>
 
+
 		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 	</head>
+
 
 	<body>
 		<h1 class="title">簡単伝言板</h1>
@@ -488,11 +490,13 @@ h1.title {
 	margin: 50px 0px;
 }
 
+
 .form tr td {
 	color: #999;
 	padding: 0px 10px;
 	font-size: 14pt;
 }
+
 
 th {
 	background-color: #999;
@@ -4100,7 +4104,7 @@ class People2 < People
         puts "My name is " + @name + ". I'm " + @age.to_s + " old."
     end
 end
-  
+ 
 taro = People.new "taro"
 hanako = People2.new "Hanako",24
 taro.print
