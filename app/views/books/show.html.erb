@@ -1,2 +1,18 @@
 <h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<p>※「<%= @books.title %>」の読書データ</p>
+<table>
+	<tr><th width="100px">Id</th>
+		<td><%= @books.id %></td></tr>
+	<tr><th>タイトル</th>
+		<td><%= @books.title %></td></tr>
+	<tr><th>著者</th>
+		<td><%= @books.author %></td></tr>
+	<tr><th>価格</th>
+		<td><%= @books.price %>円</td></tr>
+	<tr><th>出版社</th>
+		<td><%= @books.publisher %></td></tr>
+	<tr><th>コメント</th>
+		<td><%= @books.memo %></td></tr>
+	</tr>
+</table>
+<p class="link"><a href="/cards">&lt;&lt; ※トップページに戻る</a></p>

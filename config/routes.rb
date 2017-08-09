@@ -2,12 +2,15 @@ Rails.application.routes.draw do
   #　もう一度カードを自分で作る
     get 'books/index'
     get '/books', to: 'books#index'
-
-    get 'books/show'
+    
+    get 'books/add'
+    post 'books/add'
+    
+    get 'books/:id', to:'books#show'
 
     get 'books/edit'
 
-    get 'books/add'
+
 
     # aardsに対応したroute
     get 'cards/index'
