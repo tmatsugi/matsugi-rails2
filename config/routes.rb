@@ -30,8 +30,13 @@ Rails.application.routes.draw do
     get 'people/add'
     post 'people/add', to:'people#create'
     
+        # 編集画面
+    get 'people/edit/:id', to:'people#edit'
+    patch 'people/edit/:id', to:'people#update'
     
     # ID検索
     get 'people/:id', to:'people#show'
+    
+    get 'people/delete/:id', to: 'people#delete'
     
 end

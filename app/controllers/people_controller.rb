@@ -19,14 +19,31 @@ class PeopleController < ApplicationController
   protect_from_forgery # formヘルパー
 
   def create
-	  	if request.post? then
+	if request.post? then
 		Person.create(person_params)
 	end
 	redirect_to '/people'
   end
   
+  def edit
+     @msg = "edit data.[id = " + params[:id] + "]"
+     @person = Person.find(params[:id])
+  end
+  
+  def update
+     obj = Person.find(params[:id]) # DBで取ってきた値を
+     obj.update(person_params) # どの項目に入れるか　timestampを入れてあげる必要がある
+     redirect_to '/people'
+  end
+  
+  def delete
+     obj = Person.find(params[:id])
+     obj.destroy
+     redirect_to '/people'
+  end
+  
   private
-    def person_params
-	    params.require(:person).permit(:name, :age, :mail)
-    end
+  def person_params
+    params.require(:person).permit(:name, :age, :mail)
+  end
 end
