@@ -5,12 +5,11 @@ Rails.application.routes.draw do
     
     get 'books/add'
     post 'books/add'
-    
+
+    get 'books/edit/:id', to: 'books#edit'
+    patch 'books/edit/:id', to: 'books#edit'
+
     get 'books/:id', to:'books#show'
-
-    get 'books/edit'
-
-
 
     # aardsに対応したroute
     get 'cards/index'

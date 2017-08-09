@@ -4,10 +4,15 @@ class BooksController < ApplicationController
   end
 
   def show
-    @books = Book.find(params[:id])
+    @book = Book.find(params[:id])
   end
 
   def edit
+    @book = Book.find(params[:id])
+    if request.patch? then
+      @book.update(book_params)
+      goback
+    end
   end
 
   def add
@@ -15,7 +20,7 @@ class BooksController < ApplicationController
 			Book.create(book_params)
 			goback
 		else
-			@books = Book.new
+			@book = Book.new
     end
   end
   
