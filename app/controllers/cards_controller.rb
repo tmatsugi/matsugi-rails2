@@ -5,11 +5,9 @@ class CardsController < ApplicationController
 		@cards = Card.all
 	end
 
-
 	def show
 		@card = Card.find(params[:id])
 	end
-
 
 	def add
 		if request.post? then
@@ -20,7 +18,6 @@ class CardsController < ApplicationController
 		end
 	end
 
-
 	def edit
 		@card = Card.find(params[:id])
 		if request.patch? then
@@ -29,24 +26,19 @@ class CardsController < ApplicationController
 		end
 	end
 
-
 	def delete
 		Card.find(params[:id]).destroy
 		goback
 	end
-
 
 	private
 	def card_params
 		params.require(:card).permit(:title, :author, :price, :publisher, :memo)
 	end
 
-
 	private
 	def goback
 		redirect_to '/cards'
 	end
-
-
 end
 
