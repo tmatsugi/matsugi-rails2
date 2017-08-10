@@ -22,11 +22,15 @@ class PeopleController < ApplicationController
     protect_from_forgery # formヘルパー
   
     def create
-      	    if request.post? then
-  	          	Person.create(person_params)
-  	    end
-  	    redirect_to '/people'
+        @person = Person.new person_params
+       	if @person.save then
+  		    redirect_to '/people'
+        else
+          @msg = '入力に問題があります。'
+          render 'add'
+        end
     end
+
     
     def edit
         @msg = "edit data.[id = " + params[:id] + "]"
@@ -49,8 +53,8 @@ class PeopleController < ApplicationController
   	    @msg = 'please type search word...'
   	    @people = Array.new
   	    if request.post? then
-            f = params[:find].split(',')
-		        @people = Person.find(f)
+          	f = params[:find].split(',')
+		        @people = Person.all.limit(f[0]).offset(f[1])
   	    end
     end
     
