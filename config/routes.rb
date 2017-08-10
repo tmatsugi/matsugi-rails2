@@ -1,6 +1,18 @@
 Rails.application.routes.draw do
     
     
+    get 'messages/index'
+    get 'messages', to: 'messages#index'
+
+    get 'messages/add'
+    post 'messages/add', to: 'messages#create'
+    
+    get 'messages/edit/:id', to:'messages#edit'
+    patch 'messages/edit/:id', to:'messages#update'
+
+    get 'messages/delete/:id', to:'messages#delete'
+    get 'messages/:id', to:'messages#show'
+    
     # もう一度カードを自分で作る
     get 'books/index'
     get '/books', to: 'books#index'

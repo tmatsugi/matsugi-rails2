@@ -1,6 +1,6 @@
 <h1>People#index</h1>
 <p><%= @msg %></p>
-<pre>
+
 <table>
 	<tr><th>Id</th>
 		<td><%= @data.id %></td></tr>
@@ -10,6 +10,13 @@
 		<td><%= @data.age %></td></tr>
 	<tr><th>Mail</th>
 		<td><%= @data.mail %></td></tr>
+	<tr><th>Message</th>
+		<td>
+		<% if @data.message != nil then %>
+			<% @data.message.each do |obj| %>
+				<%= '「' + obj.title + '」' %>
+			<% end %>
+		<% end %>
+		</td></tr>
 	</tr>
 </table>
-</pre>
