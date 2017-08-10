@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  #　もう一度カードを自分で作る
+    
+    
+    # もう一度カードを自分で作る
     get 'books/index'
     get '/books', to: 'books#index'
     
@@ -10,6 +12,8 @@ Rails.application.routes.draw do
     patch 'books/edit/:id', to: 'books#edit'
 
     get 'books/:id', to:'books#show'
+
+    get 'books/delete/:id', to:'books#delete'
 
     # aardsに対応したroute
     get 'cards/index'
@@ -47,6 +51,9 @@ Rails.application.routes.draw do
     post 'people', to: 'people#index'
     get 'people/index'
     post 'people/index'
+    
+    get 'people/find'
+    post 'people/find'
     
         # addメソット
     get 'people/add'

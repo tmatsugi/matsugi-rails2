@@ -1,4 +1,7 @@
 class PeopleController < ApplicationController
+  
+  layout 'people'
+  
   def index
     @msg = 'people data.'
     # 変数=《モデルクラス》.all allメソッドで全て取り出す Select * from People と同じ
@@ -40,6 +43,15 @@ class PeopleController < ApplicationController
      obj = Person.find(params[:id])
      obj.destroy
      redirect_to '/people'
+  end
+  
+  def find
+	@msg = 'please type search word...'
+	@people = Array.new
+	  if request.post? then
+	  	obj = Person.find params['find']
+		  @people.push obj
+	  end
   end
   
   private
